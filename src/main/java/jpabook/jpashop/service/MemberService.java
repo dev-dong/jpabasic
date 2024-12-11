@@ -19,7 +19,7 @@ public class MemberService {
     // readOnly의 default는 false이다.
     @Transactional
     public Long join(Member member) {
-        this.validateDuplicateMember(member); // 중복 회원 검증
+        validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
         return member.getId();
     }
