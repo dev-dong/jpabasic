@@ -1,7 +1,9 @@
 package jpabook.jpashop.domain.item;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import static jakarta.persistence.FetchType.*;
@@ -9,6 +11,8 @@ import static jakarta.persistence.FetchType.*;
 @Entity
 @Getter
 @Setter
+// 기본 생성자를 막을 수 있다. -> 코드를 항상 제약 상태로 개발하는게 유지보수가 좋다
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
     @Id
@@ -50,6 +54,6 @@ public class OrderItem {
      * 주문상품 전체 가격 조회
      */
     public int getTotalPrice() {
-        return getOrderPrice() + getCount();
+        return getOrderPrice() * getCount();
     }
 }
