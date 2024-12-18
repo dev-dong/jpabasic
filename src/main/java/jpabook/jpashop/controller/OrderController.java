@@ -3,7 +3,6 @@ package jpabook.jpashop.controller;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.domain.item.Member;
 import jpabook.jpashop.domain.item.Order;
-import jpabook.jpashop.domain.item.OrderStatus;
 import jpabook.jpashop.repository.OrderRepository;
 import jpabook.jpashop.repository.OrderSearch;
 import jpabook.jpashop.service.ItemService;
