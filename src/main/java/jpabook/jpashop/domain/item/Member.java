@@ -27,6 +27,8 @@ public class Member {
 
     // 하나의 회원이 여러개의 상품을 주문하기 때문에
     // mappedBy는 Order Entity에 있는 member 필드에 의해서 맵핑 된 거야 라고 명시
+    // 양방향 관계 시 한쪽은 JsonIgnore를 해줘야 한다.
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> order = new ArrayList<>();
 }
